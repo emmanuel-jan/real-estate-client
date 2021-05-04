@@ -1,0 +1,7 @@
+.topImg{
+    background-image: url(../../assets/images/bg1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;  
+    height: 100vh;
+}

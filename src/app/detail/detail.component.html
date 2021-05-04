@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="card my-3 shadow h-100" style="border-style: none;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="../../assets/images/house4.jpg" height="700" width="700" class="img-fluid" alt="...">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h2 class="card-title text-muted">Card title</h2>
+                    <p class="card-text text-muted">This is a wider card with supporting text below as a natural lead-in
+                        to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="col-9 mx-auto">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active text-danger" id="nav-home-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                    aria-selected="true">Description</button>
+                <button class="nav-link text-danger" id="nav-profile-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                    aria-selected="false">Additional Information</button>
+                <button class="nav-link text-danger" id="nav-contact-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                    aria-selected="false">Reviews</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <p class="text-muted">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi obcaecati alias esse placeat
+                    accusamus quaerat libero qui pariatur
+                    sapiente consequatur, corporis error id nulla facere sunt nobis! Fuga, cumque provident.
+                </p>
+                <p class="text-muted">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi obcaecati alias esse placeat
+                    accusamus quaerat libero qui pariatur
+                    sapiente consequatur, corporis error id nulla facere sunt nobis! Fuga, cumque provident.
+                </p>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <p class="text-muted">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi obcaecati alias esse placeat
+                    accusamus quaerat libero qui pariatur
+                    sapiente consequatur, corporis error id nulla facere sunt nobis! Fuga, cumque provident.
+                </p>
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <h5 class="text-danger text-center">YOU MIGHT ALSO LIKE </h5>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card text-center h-100">
+                <img src="img/house7.jpg" class="card-img-top" height="300" alt="...">
+                <div class="card-body text-muted">
+                    <h5 class="card-title"><i class="fas fa-map-marker-alt"></i>&nbsp;Location</h5>
+                    <p>
+                        <i class="fas fa-bed"></i>&nbsp;bd
+                        <i class="fas fa-shower"></i>&nbsp;ba
+                        <i class="fas fa-ruler-combined"></i>&nbsp;1175 sqft
+                        <i class="fas fa-dollar-sign"></i>&nbsp;Price
+                    </p>
+                    <a [routerLink]="['/lands', 2]" class="btn btn-danger w-50"><i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
