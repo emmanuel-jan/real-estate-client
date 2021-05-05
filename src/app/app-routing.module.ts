@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DetailComponent } from './detail/detail.component';
+import { LandComponent } from './land/land.component';
 import { ListingComponent } from './listing/listing.component';
 import { LoginComponent } from './login/login.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'lands/:id',
     component:DetailComponent
+  },
+  {
+    path:'land',
+    component:LandComponent
   }
 ];
 
