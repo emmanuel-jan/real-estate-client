@@ -19,5 +19,12 @@ export class AuthService {
   saveUser(data):Observable<any>{
     return this.http.post("http://localhost:8080/api/user",data,{responseType:"text"});
   }
+
+  requestReset(email):Observable<any>{
+    return this.http.post("http://localhost:8080/api/reset/request",email, {responseType:"text"});
+  }
   
+  changePassword(data):Observable<any>{
+    return this.http.post("http://localhost:8080/api/reset/finish",data,{responseType:"text"});
+  }
 }
