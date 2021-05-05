@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecoverPasswordComponent implements OnInit {
 
+  state = 'init';
+
+  changeState(){
+    this.state = 'finish';
+  }
+
   constructor() { }
 
   ngOnInit(): void {
