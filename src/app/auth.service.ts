@@ -12,10 +12,12 @@ export class AuthService {
     private http:HttpClient
   ) { }
 
-  // method -> email, password -> are usually observable ->expect call backs
-
   getToken(data):Observable<any>{
     return this.http.post("http://localhost:8080/api/auth",data);
+  }
+
+  saveUser(data):Observable<any>{
+    return this.http.post("http://localhost:8080/api/user",data,{responseType:"text"});
   }
   
 }
