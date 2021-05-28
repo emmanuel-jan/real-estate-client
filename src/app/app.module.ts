@@ -15,6 +15,7 @@ import { ListingComponent } from './listing/listing.component';
 import { DetailComponent } from './detail/detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandComponent } from './land/land.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LandComponent } from './land/land.component';
     RecoverPasswordComponent,
     ListingComponent,
     DetailComponent,
-    LandComponent
+    LandComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

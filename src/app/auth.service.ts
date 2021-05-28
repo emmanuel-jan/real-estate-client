@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Constants } from './constants'
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +14,18 @@ export class AuthService {
   ) { }
 
   getToken(data):Observable<any>{
-    return this.http.post("http://localhost:8080/api/auth",data);
+    return this.http.post(Constants.API_ENDPOINT+"auth",data);
   }
 
   saveUser(data):Observable<any>{
-    return this.http.post("http://localhost:8080/api/user",data,{responseType:"text"});
+    return this.http.post(Constants.API_ENDPOINT+"user",data,{responseType:"text"});
   }
 
   requestReset(email):Observable<any>{
-    return this.http.post("http://localhost:8080/api/reset/request",email, {responseType:"text"});
+    return this.http.post(Constants.API_ENDPOINT+"reset/request",email, {responseType:"text"});
   }
   
   changePassword(data):Observable<any>{
-    return this.http.post("http://localhost:8080/api/reset/finish",data,{responseType:"text"});
+    return this.http.post(Constants.API_ENDPOINT+"reset/finish",data,{responseType:"text"});
   }
 }
