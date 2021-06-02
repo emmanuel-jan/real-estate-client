@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import counties from '../../app/counties.json'
+import { Constants } from '../constants'
 
 @Component({
   selector: 'app-settings',
@@ -8,16 +9,15 @@ import counties from '../../app/counties.json'
 })
 export class SettingsComponent implements OnInit {
 
-  counties;
+  counties = counties;
 
-  residenceTypes = ["RURAL","URBAN"];
+  residenceTypes = Constants.RESIDENCE_TYPES;
 
-  landSizes = ["1/4 acre","1/8 acre","1/2 acre","1 acre","100 by 100"];
+  landSizes = Constants.LAND_SIZES;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.counties = counties 
   }
 
 }

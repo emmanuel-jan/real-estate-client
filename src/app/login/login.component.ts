@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   // wire -> in a constructor
   constructor(
     private formBuilder:FormBuilder,
-    private auth:AuthService
+    private auth:AuthService,
+    private tokenService:TokenService
   ) {
     this.loginData = this.formBuilder.group({
       email:['',[Validators.required]],
@@ -30,8 +32,23 @@ export class LoginComponent implements OnInit {
 
      this.auth.getToken(this.loginData.value).subscribe(
        (res)=>{
-          console.log(res);
-          // logic to save the token
+          this.tokenService.saveToken(res.idToken);
+
+          // now get the account
+          this.auth.getUser().subscribe(
+            (res)=>{
+              this.auth.saveUser(res);
+
+              // get the user authority
+              const authority = res.authority;
+
+              // redirect a user based on authority
+              
+            },
+            (err)=>{
+              console.error(err);
+            }
+          )
        },
        (err)=>{
           console.log(err);
