@@ -32,9 +32,8 @@ export class RegisterComponent implements OnInit {
   register() {
     //call the service to save the token
 
-    this.auth.saveUser(this.registerData.value).subscribe(
+    this.auth.registerUser(this.registerData.value).subscribe(
       (res) => {
-        console.log(res);
         this.router.navigate(['/login']);
       },
       (err) => {

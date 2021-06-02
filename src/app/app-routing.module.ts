@@ -8,39 +8,44 @@ import { ListingComponent } from './listing/listing.component';
 import { LoginComponent } from './login/login.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { RegisterComponent } from './register/register.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:ListingComponent
+    path: '',
+    component: ListingComponent
   },
   {
-    path:'register',
+    path: 'register',
     component: RegisterComponent
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path:'about',
-    component:AboutComponent
+    path: 'about',
+    component: AboutComponent
   },
   {
-    path:'contact',
-    component:ContactComponent
+    path: 'contact',
+    component: ContactComponent
   },
   {
-    path:'recover-password',
-    component:RecoverPasswordComponent
+    path: 'recover-password',
+    component: RecoverPasswordComponent
   },
   {
-    path:'lands/:id',
-    component:DetailComponent
+    path: 'lands/:id',
+    component: DetailComponent
   },
   {
-    path:'land',
-    component:LandComponent
+    path: 'land',
+    component: LandComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
   }
 ];
 

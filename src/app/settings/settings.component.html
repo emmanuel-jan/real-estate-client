@@ -1,0 +1,117 @@
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">
+            Profile
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label>First Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger btn-sm mt-3">UPDATE PROFILE</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">
+            Authority
+        </div>
+        <div class="card-body">
+            <p class="font-weight-bold">User Authority Goes Here</p>
+            <!-- BUYER ONLY -->
+            <div>
+                <button class="btn btn-danger btn-sm">BECOME A SELLER</button>
+            </div>
+
+            <!-- SELLER ONLY -->
+            <!-- <div>
+                <button class="btn btn-danger btn-sm">RESTORE AUTHORITY</button>
+            </div> -->
+
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            Land Preferences
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label>County</label>
+                        <select class="form-select">
+                            <option *ngFor="let county of counties" value="{{county.name}}">{{county.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Type</label>
+                        <select class="form-select">
+                            <option *ngFor="let type of residenceTypes" value="{{type}}">{{type}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Land Size</label>
+                        <select class="form-select">
+                            <option *ngFor="let size of landSizes" value="{{size}}">{{size}}</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger btn-sm mt-3">UPDATE LAND PREFERENCES</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SELLER ONLY -->
+    <div class="card mt-3">
+        <div class="card-header">
+            Payment Info
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Amount Payable</th>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Billing Type</th>
+                        <td>MONTHLY</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Payment Status</th>
+                        <td>PAID</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last Payment Date</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Due Date</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-danger btn-sm">INITIATE PAYMENT</button>
+        </div>
+    </div>
+</div>
