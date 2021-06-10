@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
   // declare a class that will carry form data
   registerData;
 
+  passwordMissMatch: boolean = false;
+
   constructor(
     private formbuilder: FormBuilder,
     private auth: AuthService,
@@ -24,22 +26,36 @@ export class RegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
-
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
     })
   }
 
   register() {
     //call the service to save the token
 
-    this.auth.registerUser(this.registerData.value).subscribe(
-      (res) => {
-        this.router.navigate(['/login']);
-      },
-      (err) => {
-        console.log(err);
-      }
-    )
+    if (this.registerData.value.password != this.registerData.value.confirmPassword) {
+      this.passwordMissMatch = true;
+    }
+
+    if (!this.passwordMissMatch) {
+
+      // remove the confirmPassword key -> We do not expect it to be sent to the server
+      delete this.registerData.value["confirmPassword"];
+
+      console.log(this.registerData.value);
+
+      // call service to register user
+      this.auth.registerUser(this.registerData.value).subscribe(
+        () => {
+          this.router.navigate(['/login']);
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+    }
+
   }
 
   ngOnInit(): void {

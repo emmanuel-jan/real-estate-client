@@ -5,6 +5,7 @@
         </div>
         <div class="card-body">
             <form [formGroup]="loginData" id="login_form" (ngSubmit)="login()" class="row g-3">
+                <span class="alert alert-danger" *ngIf="invalidCredentials">Invalid credentials, try again! <a [routerLink]="['/recover-password']" class="text-danger">You can reset your password</a></span>
                 <div class="col-md-12">
                   <label class="form-label">Email</label>
                   <input formControlName="email" type="text" class="form-control" id="email" placeholder="email@email.com">
@@ -16,7 +17,7 @@
                     <small id="password_error" class="form-text text-muted"></small>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-outline-danger">Log In</button>
+                  <button [disabled]="!loginData.valid" type="submit" class="btn btn-outline-danger">Log In</button>
                 </div>
                 <a [routerLink]="['/recover-password']" class="text-danger">Forgot Password?</a>
             </form>

@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
 
   loginData;
 
+  invalidCredentials:boolean = false;
+
   // we will be using FormBuilder -> ReactiveFormsModule
   // wire -> in a constructor
   constructor(
@@ -43,7 +45,7 @@ export class LoginComponent implements OnInit {
               const authority = res.authority;
 
               // redirect a user based on authority
-              
+              this.redirectUser(authority);
             },
             (err)=>{
               console.error(err);
@@ -51,9 +53,22 @@ export class LoginComponent implements OnInit {
           )
        },
        (err)=>{
-          console.log(err);
+        //  This sets invalidCredentials to true -> throws an error widget to the dom..
+         this.invalidCredentials = true;
        }
      )
+   }
+
+   redirectUser(authority:string){
+     if(authority=="BUYER"){
+
+     }else if(authority=="SELLER"){
+
+     }else if(authority=="ADMIN"){
+
+     }else{
+
+     }
    }
 
   ngOnInit(): void {

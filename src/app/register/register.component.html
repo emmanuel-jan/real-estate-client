@@ -31,14 +31,15 @@
                     <input formControlName="password" type="password" class="form-control" id="password" placeholder="************">
                     <small id="password_error" class="form-text text-muted"></small>
                 </div>
-                <!-- <div class="col-md-6">
+                <div class="col-md-6">
                   <label class="form-label">Confirm Password</label>
-                  <input type="password" class="form-control" id="confirmPassword" placeholder="************">
+                  <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="************">
                   <small id="confirmPassword_error" class="form-text text-muted"></small>
-                </div> -->
+                </div>
                
+                <span class="alert alert-danger" *ngIf="passwordMissMatch">Passwords do not match</span>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-outline-danger">Sign Up</button>
+                  <button [disabled]="!registerData.valid" type="submit" class="btn btn-outline-danger">Sign Up</button>
                 </div>
               </form>
         </div>
